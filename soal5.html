@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penentuan tahun kabisat</title>
+</head>
+<body>
+    <h1>Penentuan tahun kabisat</h1>
+    <p>Berikut adalah contoh tahun-tahun yang bukan merupakan tahun kabisat:</p>
+    <ul id="hasilTahun"></ul>
+    <form action="index.html">
+        <button type="submit">Balik</button>
+    </form>
+    <script>
+        function tahunBukanKabisat() {
+            var tahunAwal = 1; // Tahun awal
+            var tahunAkhir = 2000; // Tahun akhir
+
+            var tahunBukanKabisatList = [];
+
+            for (var tahun = tahunAwal; tahun <= tahunAkhir; tahun++) {
+                if (tahun % 4 !== 0) {
+                    tahunBukanKabisatList.push("Tahun " + tahun + " bukanlah tahun kabisat");
+                }
+            }
+
+            var hasilTahun = document.getElementById("hasilTahun");
+            tahunBukanKabisatList.forEach(function (tahun) {
+                var li = document.createElement("li");
+                li.textContent = tahun;
+                hasilTahun.appendChild(li);
+            });
+        }
+
+        tahunBukanKabisat();
+    </script>
+</body>
+</html>

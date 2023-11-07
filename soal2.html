@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cek bilangan ganjil atau genap</title>
+</head>
+<body>
+    <h2>Cek Angka Ganjil atau Genap</h2>
+    <label for="angka">Masukkan angka:</label>
+    <input type="number" id="angka">
+    <br>
+    <button onclick="cekNoPolGanjilGenap()">Cek</button>
+    <p id="hasilCek"></p>
+    <form action="index.html">
+        <button type="submit">Balik</button>
+    </form>
+    <script>
+        function cekNoPolGanjilGenap() {
+            // Ambil nilai angka dari input
+            var angka = parseInt(document.getElementById("angka").value);
+
+            // Periksa apakah angka adalah ganjil atau genap
+            if (angka % 2 === 0) {
+                document.getElementById("hasilCek").innerHTML = angka + " adalah angka genap.";
+            } else {
+                document.getElementById("hasilCek").innerHTML = angka + " adalah angka ganjil.";
+            }
+        }
+    </script>
+</body>
+</html>

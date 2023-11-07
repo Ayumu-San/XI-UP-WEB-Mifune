@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operasi Aritmatika Dasar</title>
+</head>
+<body>
+    <h1>Operasi Aritmatika Dasar</h1>
+    <label for="angka1">Masukkan Angka Pertama:</label>
+    <input type="number" id="angka1">
+    <br>
+    <label for="angka2">Masukkan Angka Kedua:</label>
+    <input type="number" id="angka2">
+    <br>
+    <button onclick="hitungOperasi()">Hitung</button>
+    <ul id="hasilOperasi"></ul>
+    <form action="index.html">
+        <button type="submit">Balik</button>
+    </form>
+    <script>
+        function hitungOperasi() {
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+            
+            var hasilOperasiList = [];
+
+            var tambah = angka1 + angka2;
+            hasilOperasiList.push("Hasil Pertambahan: " + tambah);
+
+            var kurang = angka1 - angka2;
+            hasilOperasiList.push("Hasil Pengurangan: " + kurang);
+
+            var kali = angka1 * angka2;
+            hasilOperasiList.push("Hasil Perkalian: " + kali);
+
+            var pangkat = Math.pow(angka1, angka2);
+            hasilOperasiList.push("Hasil Pemangkatan: " + pangkat);
+
+            var modulus = angka1 % angka2;
+            hasilOperasiList.push("Hasil Modulus: " + modulus);
+
+            var hasilOperasi = document.getElementById("hasilOperasi");
+            hasilOperasi.innerHTML = ""; // Menghapus hasil sebelumnya
+
+            hasilOperasiList.forEach(function (hasil) {
+                var li = document.createElement("li");
+                li.textContent = hasil;
+                hasilOperasi.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

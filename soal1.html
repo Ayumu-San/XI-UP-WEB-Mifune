@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perhitung Luas Segitiga</title>
+</head>
+<body>
+    <h1>Perhitung Luas Segitiga</h1>
+    <label for="alas">Masukkan Alas:</label>
+    <input type="number" id="alas">
+    <br>
+    <label for="tinggi">Masukkan Tinggi:</label>
+    <input type="number" id="tinggi">
+    <br>
+    <button onclick="hitungLuas()">Hitung Luas</button>
+    <p id="hasilLuas"></p>
+    <form action="index.html">
+        <button type="submit">Balik</button>
+    </form>
+    <script>
+        function hitungLuas() {
+            // Ambil nilai alas dan tinggi dari input
+            var alas = parseFloat(document.getElementById("alas").value);
+            var tinggi = parseFloat(document.getElementById("tinggi").value);
+
+            // Hitung luas segitiga
+            var luas = 0.5 * alas * tinggi;
+
+            // Tampilkan hasil luas pada elemen dengan id "hasilLuas"
+            document.getElementById("hasilLuas").innerHTML = "Luas Segitiga: " + luas;
+        }
+    </script>
+</body>
+</html>
